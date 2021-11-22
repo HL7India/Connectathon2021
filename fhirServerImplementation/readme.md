@@ -1,1 +1,1 @@
-This will contain all the code snippets for FHIR Server Implementation Track
+This will contain all the code and other artefacts for FHIR Server Implementation Track
