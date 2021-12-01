@@ -24,3 +24,30 @@ INSERT INTO patient_data(pid,synthea_id,title,fname,mname,lname,DOB,street,posta
 INSERT INTO patient_data(pid,synthea_id,title,fname,mname,lname,DOB,street,postal_code,city,state,drivers_license,ss,pharmacy_id,status,date,sex,providerID,ref_providerID,race,ethnicity,pubpid,fitness,pricelevel,regdate,contrastart,completed_ad,deceased_date) VALUES (2955649569,'b02ba221-2bca-692c-0c65-b43cca039dd2','Mr.','Danny','B','Fleming','1921-09-06','1873 Burwell Heights Road','77701','Beaumont','TX','7418409523','999-70-7774','0','married',NOW(),'Male','0','0','white','nonhispanic','MRN95521','0','standard',NULL,NULL,'NO',NULL);
 
 update patient_data set uuid = uuid_to_bin(synthea_id); 
+update patient_data pd set pd.email = concat(lower(fname), lower(pd.lname), '@testmail.com');
+update patient_data pd set pd.email_direct = concat(lower(fname), lower(pd.lname), '@personalmail.com');
+update patient_data pd set pd.country_code = 'USA';
+
+-- Updating patient_data with Phone Numbers
+UPDATE patient_data SET phone_biz = '770-462-7457',phone_cell = '770-462-7822',phone_home = '770-462-4774',genericval1 = '51-1889-4132-4459' WHERE synthea_id= '1fe53872-9ed8-1c07-6e2f-541bb7bf7c97';
+UPDATE patient_data SET phone_biz = '617-620-7626',phone_cell = '617-620-7365',phone_home = '617-620-5934',genericval1 = '29-1280-1933-4172' WHERE synthea_id= '20429f4a-61e1-c7bc-9f95-dfa682b94124';
+UPDATE patient_data SET phone_biz = '828-726-5201',phone_cell = '828-726-5825',phone_home = '828-726-7393',genericval1 = '77-2614-1671-1275' WHERE synthea_id= '29940297-ae12-6a7a-0258-47143d61b9c7';
+UPDATE patient_data SET phone_biz = '864-334-8294',phone_cell = '864-334-2588',phone_home = '864-334-7339',genericval1 = '45-1911-4566-4058' WHERE synthea_id= '52a455c4-0bf7-8d3f-3d61-420f200b02d9';
+UPDATE patient_data SET phone_biz = '817-529-5252',phone_cell = '817-529-7806',phone_home = '817-529-7832',genericval1 = '45-1758-3399-2474' WHERE synthea_id= '53a13c1b-52ef-5454-73b6-82753854095a';
+UPDATE patient_data SET phone_biz = '516-357-4759',phone_cell = '516-357-5060',phone_home = '516-357-6749',genericval1 = '30-2999-1847-1946' WHERE synthea_id= '54e6e251-55ca-1a6c-f21c-cd53458a827d';
+UPDATE patient_data SET phone_biz = '973-719-3111',phone_cell = '973-719-2266',phone_home = '973-719-1888',genericval1 = '24-2813-1723-4809' WHERE synthea_id= '57168f52-5c04-1701-c53d-20ae427c7d33';
+UPDATE patient_data SET phone_biz = '814-291-8110',phone_cell = '814-291-5399',phone_home = '814-291-7677',genericval1 = '31-1739-3341-2790' WHERE synthea_id= '66bc7da2-cfff-5c41-600b-01ed83e9e691';
+UPDATE patient_data SET phone_biz = '859-585-6580',phone_cell = '859-585-8622',phone_home = '859-585-4671',genericval1 = '36-2796-1757-2618' WHERE synthea_id= '6c09f512-d483-27b9-5e2a-e7e390c7f240';
+UPDATE patient_data SET phone_biz = '803-205-6217',phone_cell = '803-205-2408',phone_home = '803-205-9494',genericval1 = '34-1385-2245-4404' WHERE synthea_id= '6f25ade0-9e1c-2753-44c2-b08153ae20d1';
+UPDATE patient_data SET phone_biz = '731-333-5265',phone_cell = '731-333-7182',phone_home = '731-333-2191',genericval1 = '77-2723-2378-4475' WHERE synthea_id= '717d1bf6-8665-396b-b2e3-82b136b89652';
+UPDATE patient_data SET phone_biz = '248-738-5147',phone_cell = '248-738-4478',phone_home = '248-738-6456',genericval1 = '69-1243-4963-2593' WHERE synthea_id= '958ffbd3-5f89-04d5-2f0f-ed9299c2d388';
+UPDATE patient_data SET phone_biz = '801-792-4430',phone_cell = '801-792-6859',phone_home = '801-792-4085',genericval1 = '50-1863-1333-4552' WHERE synthea_id= '9759d845-b496-694c-d1e5-a355ee4f6224';
+UPDATE patient_data SET phone_biz = '501-542-4431',phone_cell = '501-542-9050',phone_home = '501-542-5585',genericval1 = '72-2440-4787-1795' WHERE synthea_id= '99d2c03f-114d-eee3-6f4e-4df1492f4268';
+UPDATE patient_data SET phone_biz = '330-960-4359',phone_cell = '330-960-6173',phone_home = '330-960-4164',genericval1 = '27-2421-3359-3755' WHERE synthea_id= '9fbe786f-98ad-2dea-e9cf-3bac679fe483';
+UPDATE patient_data SET phone_biz = '828-228-6204',phone_cell = '828-228-8747',phone_home = '828-228-9918',genericval1 = '29-1380-4398-1408' WHERE synthea_id= 'a02b7207-9ce1-2918-d9a1-dfd44d570483';
+UPDATE patient_data SET phone_biz = '760-309-5286',phone_cell = '760-309-9069',phone_home = '760-309-5696',genericval1 = '65-1442-3700-4150' WHERE synthea_id= 'b02ba221-2bca-692c-0c65-b43cca039dd2';
+UPDATE patient_data SET phone_biz = '303-217-5786',phone_cell = '303-217-8238',phone_home = '303-217-8793',genericval1 = '23-1463-1816-2841' WHERE synthea_id= 'c93703e2-e728-ae2f-d6d2-237b20de8f4d';
+UPDATE patient_data SET phone_biz = '231-512-4306',phone_cell = '231-512-5733',phone_home = '231-512-5108',genericval1 = '54-2242-3061-2652' WHERE synthea_id= 'f370a6c3-7394-4652-0995-d1aa95ef9059';
+UPDATE patient_data SET phone_biz = '315-738-3247',phone_cell = '315-738-8007',phone_home = '315-738-8914',genericval1 = '70-2614-1365-4453' WHERE synthea_id= 'fc5b62fb-b632-78d5-ad20-d8b44b9adca4';
+UPDATE patient_data SET phone_biz = '435-896-4502',phone_cell = '435-896-7583',phone_home = '435-896-8154',genericval1 = '29-2561-1330-1743' WHERE synthea_id= 'fe9e863b-e264-3343-b264-bb2a5cc3afd1';
+
