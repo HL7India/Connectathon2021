@@ -16,3 +16,11 @@ f.name = "Riverside Hospital"
 , f.mail_state = "WI"
 , f.mail_zip = "531510"
 where id = 3; 
+
+
+-- Changing Facility details to Indian data
+UPDATE facility
+SET street='13/1 Mount Joy Road Hanumanthanagar', city='Bangalore', state='Karnataka', postal_code='560019',
+    mail_street='Mount Joy Road', mail_street2='', mail_city='Bangalore', mail_state='KR', mail_zip='560019'
+WHERE id=3;
+
