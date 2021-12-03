@@ -1,0 +1,96 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo docker-compose down
+sudo docker rm -f $(docker ps -a -q)
+sudo docker volume rm $(docker volume ls -q)
+sudo apt-get remove docker docker-engine docker.io containerd runc -y
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+rm -rf /usr/share/keyrings/docker-archive-keyring.gpg
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+image=`sudo apt-cache madison docker-ce |head -n 1 |awk '{print $3}'`
+
+sudo apt-get install docker-ce="$image" docker-ce-cli="$image" containerd.io
+sudo service docker restart
+sudo apt-get install docker-compose -y
+
+sudo cat << EOF > /root/docker-compose.yml
+# Use admin/pass as user/password credentials to login to openemr (from OE_USER and OE_PASS below)
+# MYSQL_HOST and MYSQL_ROOT_PASS are required for openemr
+# MYSQL_USER, MYSQL_PASS, OE_USER, MYSQL_PASS are optional for openemr and
+#   if not provided, then default to openemr, openemr, admin, and pass respectively.
+version: '3.2'
+services:
+  mysql:
+    restart: always
+    image: mysql:8
+    command: ['mysqld','--character-set-server=utf8','--default-authentication-plugin=mysql_native_password']
+    volumes:
+    - databasevolume:/var/lib/mysql
+    ports:
+    - 8220:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  openemr:
+    restart: always
+    image: openemr/openemr:6.0.0
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - logvolume01:/var/log
+    - sitevolume:/var/www/localhost/htdocs/openemr/sites
+    - type: bind
+      source: /root/docker_openemr/data
+      target: /data
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_ROOT_PASS: root
+      MYSQL_USER: openemr
+      MYSQL_PASS: openemr
+      OE_USER: admin
+      OE_PASS: pass
+    depends_on:
+    - mysql
+volumes:
+  logvolume01: {}
+  sitevolume: {}
+  databasevolume: {}
+EOF
+cd /root
+sudo docker-compose up -d
+
+#Envirnment virable
+cname=`docker ps --format "{{.Names}}" |grep mysql`
+
+#SQL Data featching
+rm -rf /root/script
+sudo mkdir -p /root/script
+cd /root/script
+sudo git init
+sudo git remote add -f origin https://github.com/HL7India/Connectathon2021.git
+sudo git remote add origin https://github.com/HL7India/Connectathon2021.git
+sudo git config core.sparseCheckout true
+sudo echo "scripts" >> .git/info/sparse-checkout
+sudo git pull --depth=1 origin main
+sudo ls -l /root/script/fhirServerImplementation/openemr/scripts |grep ".sql" |awk '{print $9}' > /root/script/sqlfiles
+echo "Docker container is starting now please wait"
+sleep 60s
+docker ps -a
+
+echo "Database SQL file restoration has been intiated"
+
+for i in `cat /root/script/sqlfiles`; do docker exec -i "$cname" mysql -uroot -proot openemr  < /root/script/fhirServerImplementation/openemr/scripts/"$i" |grep "[Warning]" >/dev/null 2>&1 ;done >/dev/null 2>&1
+
+echo "Database restorstation has been completed"
+
+
