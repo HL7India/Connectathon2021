@@ -84,7 +84,7 @@ sudo echo "scripts" >> .git/info/sparse-checkout
 sudo git pull --depth=1 origin main
 sudo ls -l /root/script/fhirServerImplementation/openemr/scripts |grep ".sql" |awk '{print $9}' > /root/script/sqlfiles
 echo "Docker container is starting now please wait"
-sleep 60s
+sleep 80s
 docker ps -a
 
 echo "Database SQL file restoration has been intiated"
