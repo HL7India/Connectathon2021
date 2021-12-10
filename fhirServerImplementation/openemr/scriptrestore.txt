@@ -1,0 +1,30 @@
+
+Step1: Needs to download all SQL scripts at locally on windows. We can clone the repositry:
+git clone https://github.com/HL7India/Connectathon2021.git
+
+Step2: Needs to change directory from current path to sql direcotry
+cd https://github.com/HL7India/Connectathon2021.git
+
+example: direvie path: \dockercomp\Connectathon2021\fhirServerImplementation\openemr\scripts
+
+Step3 run the commands:
+
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 01_update_facility.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 02_insert_providers.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 03_insert_patients.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 04_insert_form_encounter.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 05_insert_users-Laboratory.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 06_insert_procedure_providers.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 07_insert_list_options_proc_units.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 08_insert_procedure_type.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 09_insert_procedure_order.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 10_insert_procedure_order_code.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 11_insert_fomrs.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 12_insert_procedure_report.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 13_insert_procedure_result.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 14_delete_blank_encounters.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 15_alter_sequences.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 16_update_layout_options.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 17_change_country_states.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 18_change_patient_data.sql
+docker exec -i openemr_mysql_1 mysql -uroot -proot openemr < 19_insert_forms.sql
