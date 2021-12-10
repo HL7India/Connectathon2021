@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "a783f545-9b7d-44ad-a9e1-2b38eaaa4221",
+		"name": "3 ServiceRequest Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create ServiceRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"ServiceRequest\",\r\n    \"status\": \"active\",\r\n    \"intent\": \"original-order\",\r\n    \"code\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"6299-2\",\r\n                \"display\": \"Urea Nitrogen\"\r\n            }\r\n        ]\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/1500\"\r\n    },\r\n    \"encounter\": {\r\n        \"reference\": \"Encounter/1501\"\r\n    },\r\n    \"occurrenceDateTime\": \"2021-12-09T00:00:00+00:00\",\r\n    \"requester\": {\r\n        \"reference\": \"Practitioner/1\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/ServiceRequest",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"ServiceRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ServiceRequest using Order ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/ServiceRequest/2",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"ServiceRequest",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

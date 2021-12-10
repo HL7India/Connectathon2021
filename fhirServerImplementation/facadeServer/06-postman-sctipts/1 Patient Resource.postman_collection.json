@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "72f1d790-43be-48b5-aec5-e4734493e36f",
+		"name": "1 Patient Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Patient using MRN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient?identifier=http%3A%2F%2Fterminology.hl7.org%2FCodeSystem%2Fv2-0203%7CMRN95515",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "http%3A%2F%2Fterminology.hl7.org%2FCodeSystem%2Fv2-0203%7CMRN95515",
+							"description": "http://terminology.hl7.org/CodeSystem/v2-0203|MRN95515"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Patient using Health ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient?identifier=https%3A%2F%2Fhealthid.ndhm.gov.in%7C69-1243-4963-2593",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "https%3A%2F%2Fhealthid.ndhm.gov.in%7C69-1243-4963-2593",
+							"description": "https://healthid.ndhm.gov.in|69-1243-4963-2593"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Patient using Gender",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient?gender=Male",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "Supported Values: Male, Female "
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Patient using Date of Birth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient?birthdate=1961-02-10",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "birthdate",
+							"value": "1961-02-10"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Patient using Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient?name=Anees",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Anees"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"identifier\": [\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"Postman-0217\",\r\n                        \"display\": \"Medical record number\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"https://healthid.ndhm.gov.in\",\r\n            \"value\": \"12-1839-4332-4449\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"text\": \"Raju Taneja\",\r\n            \"family\": \"Teneja\",\r\n            \"given\": [\r\n                \"Raju\"\r\n            ],\r\n            \"prefix\": [\r\n                \"Mr.\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"+91 195 4506949\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"+91 195 4506949\",\r\n            \"use\": \"home\"\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"+91 195 4506949\",\r\n            \"use\": \"work\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"achada@yahoo.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1961-09-22\",\r\n    \"address\": [\r\n        {\r\n            \"line\": [\r\n                \"77, Ujwal Chowk\"\r\n            ],\r\n            \"city\": \"Ajmer\",\r\n            \"state\": \"RJ\",\r\n            \"postalCode\": \"342759\",\r\n            \"country\": \"India\"\r\n        }\r\n    ],\r\n    \"maritalStatus\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                \"code\": \"M\",\r\n                \"display\": \"Married\"\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/Patient",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Patient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Patient/1500",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Patient",
+						"1500"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

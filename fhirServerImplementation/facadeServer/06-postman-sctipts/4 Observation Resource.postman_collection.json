@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "5e9974ca-f6b8-475b-92dd-97e6f8a38685",
+		"name": "4 Observation Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Observations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Observation",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Observations using Patient ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Observation?subject:Patient=535115890",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Observation"
+					],
+					"query": [
+						{
+							"key": "subject:Patient",
+							"value": "535115890"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Observations using Result ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Observation/1283",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Observation",
+						"1283"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Observation for an existing Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Observation\",\r\n    \"basedOn\": [\r\n        {\r\n            \"reference\": \"ServiceRequest/2\"\r\n        }\r\n    ],\r\n    \"status\": \"final\",\r\n    \"code\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"3094-0\",\r\n                \"display\": \"Urea nitrogen [Mass/volume] in Serum or Plasma - Instance 2\"\r\n            }\r\n        ],\r\n        \"text\": \"Urea nitrogen [Mass/volume] in Serum or Plasma\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/1500\"\r\n    },\r\n    \"valueQuantity\": {\r\n        \"value\": 35,\r\n        \"unit\": \"mg/dL\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mg/dL\"\r\n    },\r\n    \"referenceRange\": [\r\n        {\r\n            \"text\": \"6 to 24 mg/dL\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/Observation",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Observation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Observation by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/Observation/2",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"Observation",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
