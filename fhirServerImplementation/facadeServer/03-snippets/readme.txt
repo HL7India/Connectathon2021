@@ -1,0 +1,1 @@
+This directory to have code snippets during connectathon
