@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "dd4a2f4e-73f4-4cef-921a-8cbb15dd7d07",
+		"name": "FHIR Connectathon API Example",
+		"description": "One query to get Patient demographic based on first name",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://fhir.hl7fundamentals.org/r4/Patient?given=aditya",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "If-Modified-Since",
+						"value": "Mon, 22 Jun 2020 14:08:54 GMT",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"resourceType\" : \"Parameters\",\r\n  \"parameter\" : [\r\n  {\r\n    \"name\" : \"url\",\r\n     \"valueUri\" : \"http://fhir.hl7fundamentals.org/berzerkistan/ValueSet/PatientTaxSituation\"\r\n  },\r\n  {\r\n    \"name\" : \"coding\",\r\n     \"valueCoding\" : {\r\n         \"system\" : \"http://fhir.hl7fundamentals.org/berzerkistan/CodeSystem/PatientTaxSituation\",\r\n         \"code\" : \"U\"\r\n\r\n     }\r\n  }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fhir.hl7fundamentals.org/r4/Patient?given=aditya",
+					"protocol": "http",
+					"host": [
+						"fhir",
+						"hl7fundamentals",
+						"org"
+					],
+					"path": [
+						"r4",
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "given",
+							"value": "aditya"
+						}
+					]
+				},
+				"description": "Get Patient demographic based on first name"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
