@@ -1,0 +1,61 @@
+
+ FHIR Hapi library - HAPI FHIR 5.2.0 (Labrador) maven dependencies URL for NDHM FHIR Usage Samples:
+
+1. hapi-fhir-base-5.0.2-sources.jar :
+
+	https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base/5.0.2
+	
+2. hapi-fhir-structures-r4-5.0.2.jar :
+	
+	https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4/5.0.2
+
+3. hapi-fhir-structures-r5-5.0.2.jar :
+
+	https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r5/5.0.2
+
+4. hapi-fhir-validation-5.0.2.jar :
+
+	https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation/5.0.2
+
+5. hapi-fhir-validation-resources-r4-5.0.2.jar :
+
+	https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation-resources-r4/5.0.2
+	
+	
+	
+FHIR Hapi library - HAPI FHIR 5.2.0 (Labrador) maven dependencies for NDHM FHIR Usage Samples:
+
+<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base -->
+<dependency>
+    <groupId>ca.uhn.hapi.fhir</groupId>
+    <artifactId>hapi-fhir-base</artifactId>
+    <version>5.0.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4 -->
+<dependency>
+    <groupId>ca.uhn.hapi.fhir</groupId>
+    <artifactId>hapi-fhir-structures-r4</artifactId>
+    <version>5.0.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation -->
+<dependency>
+    <groupId>ca.uhn.hapi.fhir</groupId>
+    <artifactId>hapi-fhir-validation</artifactId>
+    <version>5.0.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation-resources-r4 -->
+<dependency>
+    <groupId>ca.uhn.hapi.fhir</groupId>
+    <artifactId>hapi-fhir-validation-resources-r4</artifactId>
+    <version>5.0.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r5 -->
+<dependency>
+    <groupId>ca.uhn.hapi.fhir</groupId>
+    <artifactId>hapi-fhir-structures-r5</artifactId>
+    <version>5.0.2</version>
+</dependency>
