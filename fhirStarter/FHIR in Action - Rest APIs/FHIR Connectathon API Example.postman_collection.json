@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "771ce021-af98-4908-858a-c8e8b69bac98",
+		"name": "FHIR Connectathon API Example",
+		"description": "One query to get Patient demographic based on first name",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://fhir.hl7fundamentals.org/r4/Patient?given=aditya",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "If-Modified-Since",
+						"value": "Mon, 22 Jun 2020 14:08:54 GMT",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://fhir.hl7fundamentals.org/r4/Patient?given=aditya",
+					"protocol": "http",
+					"host": [
+						"fhir",
+						"hl7fundamentals",
+						"org"
+					],
+					"path": [
+						"r4",
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "given",
+							"value": "aditya"
+						}
+					]
+				},
+				"description": "Get Patient demographic based on first name"
+			},
+			"response": []
+		}
+	]
+}
