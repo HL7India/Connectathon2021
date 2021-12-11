@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "a5fe62a5-82a6-40a9-a16b-e24546a74723",
+		"name": "NDHM - work",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-connection",
+			"item": [
+				{
+					"name": "1 - establish session & get access token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\":\"PHILLIPS_1896813\",\r\n    \"clientSecret\":\"bb32ac29-85dc-4309-b089-7e2d5502f9ee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/sessions",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Bridge - Configure BASE URL for callback",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"https://webhook.site/4d22cc5f-d579-43d9-aad4-4756813a65c4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/devservice/v1/bridges",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2-HIP",
+			"item": [
+				{
+					"name": "0-register service (HIP)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"service_1001\",\r\n    \"name\":\"test-service\",\r\n    \"type\":\"HIP\",\r\n    \"active\":true,\r\n    \"alias\":[\r\n        \"service-test-1001\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/devservice/v1/bridges/services",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1-fetching authentication mode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));\r",
+									"// In date format it should be \"hh\" and not \"HH\" otherwise u will get \r",
+									"// too many requests found error"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestId\": \"9f037162-7a4f-11eb-9439-0242ac130002\",\r\n  \"timestamp\": \"{{timestamp}}\",\r\n  \"query\": {\r\n    \"id\": \"user.test@sbx\",\r\n    \"purpose\": \"KYC_AND_LINK\",\r\n    \"requester\": {\r\n      \"type\": \"HIP\",\r\n      \"id\": \"service_1001\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/users/auth/fetch-modes",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"users",
+								"auth",
+								"fetch-modes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2-Init-Selecting Authentication mode",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDThh:mm:ss.SSSSSS\"));\r",
+									"// In date format it should be \"hh\" and not \"HH\" otherwise u will get \r",
+									"// too many requests found error"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestId\": \"5f7a535d-a3fd-416b-b069-c97d021fbacd\",\r\n  \"timestamp\": \"{{timestamp}}\",\r\n  \"query\": {\r\n    \"id\": \"user.test@sbx\",\r\n    \"purpose\": \"KYC_AND_LINK\",\r\n    \"authMode\": \"DIRECT\",\r\n    \"requester\": {\r\n      \"type\": \"HIP\",\r\n      \"id\": \"service_1001\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/users/auth/init",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"users",
+								"auth",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3-confirm authentication",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDThh:mm:ss.SSSSSS\"));\r",
+									"// In date format it should be \"hh\" and not \"HH\" otherwise u will get \r",
+									"// too many requests found error"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\":\"5f7a535d-a3fd-416b-b069-c97d021fbacd\",\r\n    \"timestamp\":\"{{timestamp}}\",\r\n    \"transactionId\": \"0137119e-fb1d-4d6e-a725-2cee313a3f8f\",\r\n    \"credential\":{\r\n        \"authCode\":\"\" // MOBILE_OTP\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/users/auth/confirm",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"users",
+								"auth",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4-Adding Care Context (Visit Summary)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));\r",
+									"// In date format it should be \"HH\" and not \"hh\" otherwise u will get \r",
+									"// too many requests found error"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-CM-ID",
+								"value": "sbx",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestId\":\"5f7a535d-a3fd-416b-b069-c97d021fbacd\",\r\n    \"timestamp\":\"{{timestamp}}\",\r\n    \"link\":{\r\n        \"accessToken\":\"eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI0NS0zMTQ4LTM0ODUtNTg4NiIsInJlcXVlc3RlclR5cGUiOiJISVAiLCJyZXF1ZXN0ZXJJZCI6InNlcnZpY2VfMTAwMSIsInBhdGllbnRJZCI6IjQ1LTMxNDgtMzQ4NS01ODg2Iiwic2Vzc2lvbklkIjoiZTRhMzU3YTEtYzFkOS00ZjQ2LTgyZTctMDYxZTkxMzY1MDA3IiwiZXhwIjoxNjE0NTc4NDgwLCJpYXQiOjE2MTQ0OTIwODB9.IbcG1WJJeav2XkG9rmEPfxnGcP9pNA66XSAd3VxgApngqFMStL4A2E6J5ltHkFZT5zxFHUCU3tUGAb8Copgs4wD1yLA-uYHr0vENrzFFh5BcXXmDoe9EiyHPDCOqbBeZBRScEC0fpGRnhcCsk6ttfzP8r_AjLH8ajtjqcKQDMsGe13Sf4VrlL_kUTWj5ZkXav1RFgF_Q4KLGDaWJWvTzb2VFZXK9IkjHYoMJFkKB_3F_u5Sau2ClrAEhUDaOm2_cx6Jw0YljmM_LTS1jrtsQXK3nlYFZ4NDoshAEZlWuyX33z0B9HsvjBPr4OcUkhHnyXHul7CHUmpZ8eSns7keDxg\",\r\n        \"patient\":{\r\n            \"referenceNumber\":\"HIP-VISIT-002\",\r\n            \"display\":\"User Test\",\r\n            \"careContexts\":[\r\n                {\r\n                    \"referenceNumber\":\"DEMO-28-2\",\r\n                    \"display\":\"28-02-DIAG\"\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/gateway/v0.5/links/link/add-contexts",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"gateway",
+								"v0.5",
+								"links",
+								"link",
+								"add-contexts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5-Request from HIP",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDTHH:mm:ss.SSSSSS\"));\r",
+									"// In date format it should be \"HH\" and not \"hh\" otherwise u will get \r",
+									"// too many requests found error"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestId\": \"499a5a4a-7dda-4f20-9b67-e24589627061\",\r\n  \"timestamp\": \"{{timestamp}}\",\r\n  \"hiRequest\": {\r\n    \"consent\": {\r\n      \"id\": \"eaef0a48-3f56-4375-885a-2909bb77d03e\"\r\n    },\r\n    \"dateRange\": {\r\n       \"from\": \"2021-05-30T07:04:29.005Z\",\r\n        \"to\": \"2021-05-31T07:04:29.005Z\"\r\n      },\r\n    \"dataPushUrl\": \"https://webhook.site/4d22cc5f-d579-43d9-aad4-4756813a65c4/data/push\",\r\n    \"keyMaterial\": {\r\n      \"cryptoAlg\": \"ECDH\",\r\n      \"curve\": \"Curve25519\",\r\n      \"dhPublicKey\": {\r\n        \"expiry\": \"{{timestamp}}\",\r\n        \"parameters\": \"Curve25519/32byte random key\",\r\n        \"keyValue\": \"0288E13C0A1092295BC108326BC4C4484A\"\r\n      },\r\n      \"nonce\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/health-information/cm/request",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"health-information",
+								"cm",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6-transfer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n//Implemented by HIU but called by HIP\r\n  \"pageNumber\": 0,\r\n  \"pageCount\": 0,\r\n  \"transactionId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", //get from prev request response\r\n  \"entries\": [\r\n    {\r\n      \"content\": \"Encrypted content of data packaged in FHIR bundle\",\r\n      \"media\": \"application/fhir+json\",\r\n      \"checksum\": \"somechecksum\",\r\n      \"careContextReference\": \"RVH1008\"\r\n    },\r\n    {\r\n      \"link\": \"https://data-from.net/sa2321afaf12e13\",\r\n      \"media\": \"application/fhir+json\",\r\n      \"checksum\": \"string\",\r\n      \"careContextReference\": \"NCC1701\"\r\n    }\r\n  ],\r\n  \"keyMaterial\": {\r\n    \"cryptoAlg\": \"ECDH\",\r\n    \"curve\": \"Curve25519\",\r\n    \"dhPublicKey\": {\r\n      \"expiry\": \"2021-02-27T20:53:48.461Z\",\r\n      \"parameters\": \"Curve25519/32byte random key\",\r\n      \"keyValue\": \"string\"\r\n    },\r\n    \"nonce\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/health-information/transfer",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"health-information",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// const moment = require('moment');",
+					"// pm.globals.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDThh:mm:ss.SSSSSS\"));",
+					"// In date format it should be \"hh\" and not \"HH\" otherwise u will get ",
+					"// too many requests found error",
+					"",
+					"pm.request.headers.add({",
+					"    key:'X-CM-ID',",
+					"    value:'sbx'",
+					"})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
