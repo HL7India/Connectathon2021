@@ -1,0 +1,7 @@
+
+# ignore logs files 
+logs.log
+error.log
+
+#ignore target files
+target/

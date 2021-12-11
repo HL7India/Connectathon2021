@@ -1,0 +1,19 @@
+ 
+C:\WINDOWS\system32>keytool -importcert -file D:\FHIR_Connectathon\AWS-Certificate\aws-cognito-server.cer -alias awscognitoserver -keystore "C:\Program Files\Java\jdk-11\lib\security\cacerts"
+Warning: use -cacerts option to access cacerts keystore
+Enter keystore password:changeit
+Owner: CN=ApiGateway, L=Seattle, C=US
+Issuer: CN=ApiGateway, L=Seattle, C=US
+Serial number: 4318e571e17aef55
+Valid from: Tue Nov 30 16:23:17 IST 2021 until: Wed Nov 30 16:23:17 IST 2022
+Certificate fingerprints:
+         SHA1: FB:40:FC:EE:FA:50:6D:21:2A:C0:8B:4A:3C:06:9F:4D:C5:E4:E8:8A
+         SHA256: 43:61:F8:19:4D:DB:63:4F:6D:CF:78:96:A9:2C:D6:C5:8D:54:C9:B5:48:A1:2A:DA:1E:94:C8:06:A2:F3:B6:B9
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+Trust this certificate? [no]:  yes
+Certificate was added to keystore
+
+ 
+reaplce JRE cacert file  (java-se-8u41/jre/lib/security/cacert) to STS  cacert file /eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.2.v20210721-1149/jre/lib/security  
