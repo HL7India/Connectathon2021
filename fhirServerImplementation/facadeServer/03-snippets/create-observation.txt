@@ -1,0 +1,50 @@
+ //--------Extract data from Observation Resource and Store in procedure_report table--------
+            ProcedureReport procedureReport = new ProcedureReport();
+            // Set Procedure Order Id
+            procedureReport.setProcedureOrder(procedureOrderOptional.get());
+            // Set Procedure Order Sequence (It will be hardcoded to '1' as we are dealing with Single Result tests)
+            procedureReport.setProcedureSequence(1);
+            // Set date of Report as current date time
+            Date date = new Date();
+            procedureReport.setDateReport(date);
+            // Set Report Status (Mapped Observation's status with procedure_report's report_status)
+            String reportStatus = "";
+            if (observation.getStatus() == Observation.ObservationStatus.FINAL) {
+                reportStatus = "final";
+            } else if (observation.getStatus() == Observation.ObservationStatus.PRELIMINARY) {
+                reportStatus = "prelim";
+            } else if (observation.getStatus() == Observation.ObservationStatus.CANCELLED) {
+                reportStatus = "cancel";
+            } else if (observation.getStatus() == Observation.ObservationStatus.ENTEREDINERROR) {
+                reportStatus = "error";
+            } else if (observation.getStatus() == Observation.ObservationStatus.CORRECTED) {
+                reportStatus = "correct";
+            }
+            procedureReport.setReportStatus(reportStatus);
+            // Set the review status as 'reviewed'
+            procedureReport.setReviewStatus("reviewed");
+            // Save the procedureReport Object which we have just set (It will populate this data in the procedure_report table)
+            ProcedureReport savedProcedureReport = procedureReportRepo.save(procedureReport);
+
+            //--------Extract data from Observation Resource and Store in procedure_result table--------
+            ProcedureResult procedureResult = new ProcedureResult();
+            // Set the Reference of Procedure Report
+            procedureResult.setProcedureReport(savedProcedureReport);
+            // Set the Result Data Type to 'S' (String)
+            procedureResult.setResultDataType("S");
+            // Set Units by extracting from value quantity field
+            procedureResult.setUnits(observation.getValueQuantity().getUnit());
+            // Set Result Code
+            procedureResult.setResultCode(observation.getCode().getCoding().get(0).getCode());
+            // Set Result Text
+            procedureResult.setResultText(observation.getCode().getCoding().get(0).getDisplay());
+            // Set the actual result value
+            procedureResult.setResult(observation.getValueQuantity().getValue().toString());
+            // Set Reference Range
+            procedureResult.setRange(observation.getReferenceRange().get(0).getText());
+            // Set Result Status to 'final'
+            procedureResult.setResultStatus("final");
+            // Save the procedureResult Object which we have just set (It will populate this data in the procedure_result table)
+            ProcedureResult savedProcedureResult = procedureResultRepo.save(procedureResult);
+            // Set Id of observation as auto generated id of procedure_result table for this new record
+            observation.setId(savedProcedureResult.getProcedureResultId().toString());

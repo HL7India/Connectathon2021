@@ -1,0 +1,3 @@
+//--------Register Interceptors--------
+        // Interceptor for OpenAPI/Swagger Documentation
+        registerInterceptor(new OpenApiInterceptor());

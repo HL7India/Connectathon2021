@@ -1,0 +1,56 @@
+//--------Set the id--------
+        observation.setId(procedureResult.getProcedureResultId().toString());
+        //--------Set the  basedOn field (List Of References of Service Request)--------
+        ProcedureOrder procedureOrder = procedureResult.getProcedureReport().getProcedureOrder();
+        Reference reference = new Reference("ServiceRequest/"
+                + procedureOrder.getProcedureOrderId());
+        List<Reference> referenceList = new ArrayList<>();
+        referenceList.add(reference);
+        PatientData patientData = procedureOrder.getPatientData();
+        observation.setBasedOn(referenceList);
+        //--------Set the Subject (Reference of Patient)--------
+        observation.setSubject(new Reference("Patient/" + patientData.getPid()));
+        //--------Set Observation's status--------
+        // Mapped procedure_report's report_status column with observation status
+        if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("final")) {
+            observation.setStatus(Observation.ObservationStatus.FINAL);
+        } else if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("prelim")) {
+            observation.setStatus(Observation.ObservationStatus.PRELIMINARY);
+        } else if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("cancel")) {
+            observation.setStatus(Observation.ObservationStatus.CANCELLED);
+        } else if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("error")) {
+            observation.setStatus(Observation.ObservationStatus.ENTEREDINERROR);
+        } else if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("correct")) {
+            observation.setStatus(Observation.ObservationStatus.CORRECTED);
+        } else if (procedureResult.getProcedureReport().getReportStatus().equalsIgnoreCase("review")) {
+            observation.setStatus(Observation.ObservationStatus.FINAL);
+        }
+        //--------Set Observation Code--------
+        CodeableConcept codeableConcept = new CodeableConcept();
+        List<Coding> codingList = new ArrayList<>();
+        Coding coding = new Coding();
+        coding.setSystem("http://loinc.org");
+        coding.setCode(procedureResult.getResultCode());
+        coding.setDisplay(procedureResult.getResultText());
+        codingList.add(coding);
+        codeableConcept.setCoding(codingList);
+        codeableConcept.setText(procedureResult.getResultText());
+        observation.setCode(codeableConcept);
+        //--------Set Value--------
+        String result = procedureResult.getResult();
+        if (isNumeric(result)) {
+            Quantity quantity = new Quantity();
+            quantity.setSystem("http://unitsofmeasure.org");
+            quantity.setValue(Double.parseDouble(procedureResult.getResult()));
+            quantity.setCode(procedureResult.getUnits());
+            quantity.setUnit(procedureResult.getUnits());
+            observation.setValue(quantity);
+        } else {
+            observation.setValue(new StringType(result));
+        }
+        //--------Set Reference Range--------
+        List<Observation.ObservationReferenceRangeComponent> obsRefList = new ArrayList<>();
+        Observation.ObservationReferenceRangeComponent obsRef = new Observation.ObservationReferenceRangeComponent();
+        obsRef.setText(procedureResult.getRange());
+        obsRefList.add(obsRef);
+        observation.setReferenceRange(obsRefList);
