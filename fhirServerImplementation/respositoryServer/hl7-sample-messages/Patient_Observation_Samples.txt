@@ -1,0 +1,210 @@
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||321564897312||Shastri^Geeta||19880330|female|||Saarathi Signor^^Pune^Maharashtra^411057||^home^phone^^^^9898989877~^work^phone^^^^0231654476~^home^email^geeta_shastri@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||321564897312||Shastri^Geeta||19880330|female|||Saarathi Signor^^Pune^Maharashtra^411057||^home^phone^^^^9898989877~^work^phone^^^^0231654476~^home^email^geeta_shastri@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Complete Blood Count (CBC)^00065227^57021-8^CBC \T\ Auto Differential^pCLOCD|R||201411130914|||KYLA|original-order|||201411130914||^Xavarie^Sonna^^^^^XAVS||00065227||||201411130915||LAB|completed||^^^^^R|^Xavarie^Sonna^^^^^XAVS|
+OBX|1|NM|^White Blood Count (WBC)^00065227^6690-2^Leukocytes [#/volume] in Blood by Automated count^pCLOCD|1|10.1|10\S\9/L|3.1-9.7|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Red Blood Count (RBC)^00065227^789-8^Erythrocytes [#/volume] in Blood by Automated count^pCLOCD|1|3.2|10\S\12/L|3.7-5.0|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^'Hemoglobin [Mass/volume] in Blood^00065227^718-7^Hemoglobin [Mass/volume] in Blood^pCLOCD|1|140|g/L|118-151|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||324564897312||Shastri^Keshav||19880330|male|||Saarathi Signor^^Pune^Maharashtra^411057||^home^phone^^^^9898989872~^work^phone^^^^02316544762~^home^email^keshavshastri@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||324564897312||Shastri^Keshav||19880330|male|||Saarathi Signor^^Pune^Maharashtra^411057||^home^phone^^^^9898989872~^work^phone^^^^02316544762~^home^email^keshavshastri@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Complete Blood Count (CBC)^00065227^57021-8^CBC \T\ Auto Differential^pCLOCD|R||201411130914|||KYLA|original-order|||201411130914||^Xavarie^Sonna^^^^^XAVS||00065227||||201411130915||LAB|completed||^^^^^R|^Xavarie^Sonna^^^^^XAVS|
+OBX|1|NM|^White Blood Count (WBC)^00065227^6690-2^Leukocytes [#/volume] in Blood by Automated count^pCLOCD|1|10.1|10\S\9/L|3.1-9.7|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Red Blood Count (RBC)^00065227^789-8^Erythrocytes [#/volume] in Blood by Automated count^pCLOCD|1|3.2|10\S\12/L|3.7-5.0|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^'Hemoglobin [Mass/volume] in Blood^00065227^718-7^Hemoglobin [Mass/volume] in Blood^pCLOCD|1|140|g/L|118-151|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||322564897312||Deshmukh^Seema||19880430|female|||Raunak Park^^Thane^Maharashtra^400610||^home^phone^^^^9898959877~^work^phone^^^^02316544766~^home^email^seemadeshmukh@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64436||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||322564897312||Deshmukh^Seema||19880430|female|||Raunak Park^^Thane^Maharashtra^400610||^home^phone^^^^9898959877~^work^phone^^^^02316544766~^home^email^seemadeshmukh@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Lipid 1996 panel - Serum or Plasma^^^24331-1^Lipid 1996 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Cholesterol [Mass/volume] in Serum or Plasma^^^2093-3^Cholesterol [Mass/volume] in Serum or Plasma|1|255|	mg/dL|120-200|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Triglyceride [Mass/volume] in Serum or Plasma^^^789-8^Triglyceride [Mass/volume] in Serum or Plasma|1|60|mg/dL|120-200|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^Cholesterol in HDL [Mass/volume] in Serum or Plasma^^^718-7^2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma|1|150|mg/dL|120-200|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|TestSendingSystem||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||323564897312||Deshmukh^Aditya||19880430|male|||Raunak Park^^Thane^Maharashtra^400610||^home^phone^^^^9898959871~^work^phone^^^^02316544761~^home^email^adityadeshmukh@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64436||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||323564897312||Deshmukh^Aditya||19880430|male|||Raunak Park^^Thane^Maharashtra^400610||^home^phone^^^^9898959871~^work^phone^^^^02316544761~^home^email^adityadeshmukh@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Lipid 1996 panel - Serum or Plasma^^^24331-1^Lipid 1996 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Cholesterol [Mass/volume] in Serum or Plasma^^^2093-3^Cholesterol [Mass/volume] in Serum or Plasma|1|250|	mg/dL|120-200|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Triglyceride [Mass/volume] in Serum or Plasma^^^789-8^Triglyceride [Mass/volume] in Serum or Plasma|1|70|mg/dL|120-200|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^Cholesterol in HDL [Mass/volume] in Serum or Plasma^^^718-7^2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma|1|140|mg/dL|120-200|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||325564897312||Joshi^Prasanna||19880330|male|||Godrej Park^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989873~^work^phone^^^^02316544763~^home^email^joshiprasanna@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||325564897312||Joshi^Prasanna||19880330|male|||Godrej Park^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989873~^work^phone^^^^02316544763~^home^email^joshiprasanna@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Lipid 1996 panel - Serum or Plasma^^^24331-1^Lipid 1996 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Cholesterol [Mass/volume] in Serum or Plasma^^^2093-3^Cholesterol [Mass/volume] in Serum or Plasma|1|300|	mg/dL|120-200|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Triglyceride [Mass/volume] in Serum or Plasma^^^789-8^Triglyceride [Mass/volume] in Serum or Plasma|1|100|mg/dL|120-200|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^Cholesterol in HDL [Mass/volume] in Serum or Plasma^^^718-7^2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma|1|180|mg/dL|120-200|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||325564891312||Joshi^Teju||19880330|female|||Godrej Park^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989874~^work^phone^^^^02316544764~^home^email^joshiteju@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||325564891312||Joshi^Teju||19880330|female|||Godrej Park^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989874~^work^phone^^^^02316544764~^home^email^joshiteju@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Lipid 1996 panel - Serum or Plasma^^^24331-1^Lipid 1996 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Cholesterol [Mass/volume] in Serum or Plasma^^^2093-3^Cholesterol [Mass/volume] in Serum or Plasma|1|289|	mg/dL|120-200|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Triglyceride [Mass/volume] in Serum or Plasma^^^789-8^Triglyceride [Mass/volume] in Serum or Plasma|1|111|mg/dL|120-200|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^Cholesterol in HDL [Mass/volume] in Serum or Plasma^^^718-7^2085-9 Cholesterol in HDL [Mass/volume] in Serum or Plasma|1|130|mg/dL|120-200|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||326564897312||Kale^Aadinath||19880330|male|||Royal Garden^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989875~^work^phone^^^^02316544765~^home^email^kale_shubhra@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||326564897312||Kale^Aadinath||19880330|male|||Royal Garden^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989875~^work^phone^^^^02316544765~^home^email^kale_shubhra@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Complete Blood Count (CBC)^00065227^57021-8^CBC \T\ Auto Differential^pCLOCD|R||201411130914|||KYLA|original-order|||201411130914||^Xavarie^Sonna^^^^^XAVS||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^White Blood Count (WBC)^00065227^6690-2^Leukocytes [#/volume] in Blood by Automated count^pCLOCD|1|12.0|10\S\9/L|3.1-9.7|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Red Blood Count (RBC)^00065227^789-8^Erythrocytes [#/volume] in Blood by Automated count^pCLOCD|1|3.1|10\S\12/L|3.7-5.0|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^'Hemoglobin [Mass/volume] in Blood^00065227^718-7^Hemoglobin [Mass/volume] in Blood^pCLOCD|1|130|g/L|118-151|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||327564897312||kale^Shubhra||19880330|female|||Royal Garden^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989876~^work^phone^^^^02316544766~^home^email^kale_aadinath@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||327564897312||kale^Shubhra||19880330|female|||Royal Garden^^Kalyan^Maharashtra^421301||^home^phone^^^^9898989876~^work^phone^^^^02316544766~^home^email^kale_aadinath@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Complete Blood Count (CBC)^00065227^57021-8^CBC \T\ Auto Differential^pCLOCD|R||201411130914|||KYLA|original-order|||201411130914||^Xavarie^Sonna^^^^^XAVS||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^White Blood Count (WBC)^00065227^6690-2^Leukocytes [#/volume] in Blood by Automated count^pCLOCD|1|12.1|10\S\9/L|3.1-9.7|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Red Blood Count (RBC)^00065227^789-8^Erythrocytes [#/volume] in Blood by Automated count^pCLOCD|1|2.2|10\S\12/L|3.7-5.0|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|3|NM|^'Hemoglobin [Mass/volume] in Blood^00065227^718-7^Hemoglobin [Mass/volume] in Blood^pCLOCD|1|146|g/L|118-151|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||329564897312||Kulkarni^Sandeep||19880330|male|||Aum Society^^Pune^Maharashtra^411058||^home^phone^^^^9198989877~^work^phone^^^^023165447652~^home^email^sandeep_kulkarni@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||627564897312||Patil^Nilesh||19880330|male|||Aum Society^^Pune^Maharashtra^411057||^home^phone^^^^9898989877~^work^phone^^^^023165447651~^home^email^nilesh_patil@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Hepatic function 2000 panel - Serum or Plasma^^^24325-3^Hepatic function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Protein [Mass/volume] in Serum or Plasma^^^2885-2^Protein [Mass/volume] in Serum or Plasma|1|12.0|g/dL|6.0-8.0|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Albumin [Mass/volume] in Serum or Plasma^^^1751-7^Albumin [Mass/volume] in Serum or Plasma|1|3.1|g/dL|3.4-5.4|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||320564897312||Kulkarni^Pallavi||19880330|female|||Aum Society^^Pune^Maharashtra^411058||^home^phone^^^^9298989878~^work^phone^^^^023165447662~^home^email^pallavi_kulkarni@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||328564897312||Patil^Sneha||19880330|female|||Aum Society^^Pune^Maharashtra^411057||^home^phone^^^^9898989878~^work^phone^^^^023165447661~^home^email^sneha_patil@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Hepatic function 2000 panel - Serum or Plasma^^^24325-3^Hepatic function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Protein [Mass/volume] in Serum or Plasma^^^2885-2^Protein [Mass/volume] in Serum or Plasma|1|9.1|g/dL|6.0-8.0|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Albumin [Mass/volume] in Serum or Plasma^^^1751-7^Albumin [Mass/volume] in Serum or Plasma|1|2.9|g/dL|3.4-5.4|L||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||329564897311||Mane^Sudhir||19880330|male|||Savvy Homes^^Thane^Maharashtra^411059||^home^phone^^^^9398989877~^work^phone^^^^023165447653~^home^email^mane_sudhir@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||329564897312||Kulkarni^Sandeep||19880330|male|||Aum Society^^Pune^Maharashtra^411058||^home^phone^^^^9198989877~^work^phone^^^^023165447652~^home^email^sandeep_kulkarni@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Hepatic function 2000 panel - Serum or Plasma^^^24325-3^Hepatic function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Protein [Mass/volume] in Serum or Plasma^^^2885-2^Protein [Mass/volume] in Serum or Plasma|1|7.8|g/dL|6.0-8.0|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Albumin [Mass/volume] in Serum or Plasma^^^1751-7^Albumin [Mass/volume] in Serum or Plasma|1|3.7|g/dL|3.4-5.4|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||320564897311||Mane^Supriya||19880330|female|||Savvy Homes^^Thane^Maharashtra^411059||^home^phone^^^^9498989878~^work^phone^^^^023165447663~^home^email^mane_supriya@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||320564897311||Mane^Supriya||19880330|female|||Savvy Homes^^Thane^Maharashtra^411059||^home^phone^^^^9498989878~^work^phone^^^^023165447663~^home^email^mane_supriya@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Hepatic function 2000 panel - Serum or Plasma^^^24325-3^Hepatic function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Protein [Mass/volume] in Serum or Plasma^^^2885-2^Protein [Mass/volume] in Serum or Plasma|1|6.3|g/dL|6.0-8.0|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Albumin [Mass/volume] in Serum or Plasma^^^1751-7^Albumin [Mass/volume] in Serum or Plasma|1|4.9|g/dL|3.4-5.4|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||329564897313||Shinde^Amol||19880330|male|||Raunak Park^^Thane^Maharashtra^412059||^home^phone^^^^9398989879~^work^phone^^^^023165447654~^home^email^shinde_amol@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||329564897313||Shinde^Amol||19880330|male|||Raunak Park^^Thane^Maharashtra^412059||^home^phone^^^^9398989879~^work^phone^^^^023165447654~^home^email^shinde_amol@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|66|mg/dL|60-99|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|0.79|mg/dL|0.74-1.35|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||320564897314||Shinde^Pooja||19880330|female|||Raunak Park^^Thane^Maharashtra^412059||^home^phone^^^^9498989870~^work^phone^^^^023165447664~^home^email^shinde_pooja@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||320564897314||Shinde^Pooja||19880330|female|||Raunak Park^^Thane^Maharashtra^412059||^home^phone^^^^9498989870~^work^phone^^^^023165447664~^home^email^shinde_pooja@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|70|mg/dL|60-99|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|0.89|mg/dL|0.59-1.04|N||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||329564897317||Bhosale^Vikrant||19880330|male|||Pinak Homes^^Kolhapur^Maharashtra^412016||^home^phone^^^^93989898879~^work^phone^^^^023265447654~^home^email^bhosale_vikrant@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||329564897317||Bhosale^Vikrant||19880330|male|||Pinak Homes^^Kolhapur^Maharashtra^412016||^home^phone^^^^93989898879~^work^phone^^^^023265447654~^home^email^bhosale_vikrant@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|120|mg/dL|60-99|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|1.45|mg/dL|0.74-1.35|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||320564897318||Bhosale^Tanishka||19880330|female|||Pinak Homes^^Kolhapur^Maharashtra^412016||^home^phone^^^^9498989880~^work^phone^^^^023265447664~^home^email^bhosale_tanishka@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||320564897318||Bhosale^Tanishka||19880330|female|||Pinak Homes^^Kolhapur^Maharashtra^412016||^home^phone^^^^9498989880~^work^phone^^^^023265447664~^home^email^bhosale_tanishka@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|130|mg/dL|60-99|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|1.24|mg/dL|0.59-1.04|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+
+===============================================================================================================================================
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||329564897319||Marathe^Niraj||19880330|male|||Amrillo^^Sangali^Maharashtra^412017||^home^phone^^^^93989838879~^work^phone^^^^023265147654~^home^email^niraj_marathe@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522
+
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||329564897319||Marathe^Niraj||19880330|male|||Amrillo^^Sangali^Maharashtra^412017||^home^phone^^^^93989838879~^work^phone^^^^023265147654~^home^email^niraj_marathe@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|121|mg/dL|60-99|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|1.46|mg/dL|0.74-1.35|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+
+===============================================================================================================================================

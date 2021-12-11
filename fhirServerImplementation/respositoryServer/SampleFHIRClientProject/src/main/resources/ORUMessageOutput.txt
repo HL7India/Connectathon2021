@@ -1,0 +1,5 @@
+MSH|^~\&|LAB|MYFAC|LAB||201411130917||ORU^R01^ORU_R01|3216598|D|2.6|||AL|NE|
+PID|||320564844310||Jadhav^Neha||19880330|female|||Amrillo^^Sangali^Maharashtra^412014||^home^phone^^^^9498919880~^work^phone^^^^023265147664~^home^email^nehajadhav@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+OBR|1|||^Renal function 2000 panel - Serum or Plasma^^^24362-6^Renal function 2000 panel - Serum or Plasma|R||201411130914|||KYLA|original-order|||201411130914||||00065227||||201411130915||LAB|completed||^^^^^R||
+OBX|1|NM|^Glucose [Mass/volume] in Serum or Plasma^^^2345-7^Glucose [Mass/volume] in Serum or Plasma|1|131|mg/dL|60-99|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
+OBX|2|NM|^Creatinine [Mass/volume] in Serum or Plasma^^^2160-0^Creatinine [Mass/volume] in Serum or Plasma|1|1.14|mg/dL|0.59-1.04|H||A~S|Final|||201411130916|MYFAC^MyFake Hospital^L|
