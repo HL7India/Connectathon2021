@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "476cb620-47c8-4fab-8bb8-95d36950b25d",
+		"name": "NDHM Work2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-connection",
+			"item": [
+				{
+					"name": "session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\":\"PHILLIPS_1896813\",\r\n    \"clientSecret\":\"bb32ac29-85dc-4309-b089-7e2d5502f9ee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/sessions",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bridge",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\":\"https://webhook.site/4d22cc5f-d579-43d9-aad4-4756813a65c4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.ndhm.gov.in/devservice/v1/bridges",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"devservice",
+								"v1",
+								"bridges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New JWT Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\":\"PHILLIPS_1896813\",\r\n    \"clientSecret\":\"bb32ac29-85dc-4309-b089-7e2d5502f9ee\",\r\n    \"grantType\":\"refresh_token\",\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyMWU5NzA4OS00ZTcxLTQyNGEtOTAzYS1jOTAyMWM1NmFlNWYifQ.eyJleHAiOjE2MTUyNjY3MjUsImlhdCI6MTYxNTI2NDkyNSwianRpIjoiZjNiMGEwNWMtYTYzNy00M2Y2LTg4YTQtMDAwNmYzOWU5MDhjIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6Imh0dHBzOi8vZGV2Lm5kaG0uZ292LmluL2F1dGgvcmVhbG1zL2NlbnRyYWwtcmVnaXN0cnkiLCJzdWIiOiJkOTNiYWRlZC02MGJlLTQxYzYtOTI4OC1iMmU1ZmY1NzVkNDkiLCJ0eXAiOiJSZWZyZXNoIiwiYXpwIjoiUEhJTExJUFNfMTg5NjgxMyIsInNlc3Npb25fc3RhdGUiOiI5YTY1NTExZC0xYTNjLTRmZjctYWRmMC0zYjFkZDg4YTVlNDQiLCJzY29wZSI6Im9wZW5pZCBlbWFpbCBwcm9maWxlIn0.gqhKwvglzrxKu4OZxlPs6r6HCt--5zHeqx_p8tdPm1o\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GATEWAY_URL}}/v0.5/sessions",
+							"host": [
+								"{{GATEWAY_URL}}"
+							],
+							"path": [
+								"v0.5",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health ID Creation",
+			"item": [
+				{
+					"name": "0-Health ID existence check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-TOKEN",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"healthId\":\"user.test@sbx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/search/existsByHealthId",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"search",
+								"existsByHealthId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1-Generate Mobile OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"TXNID\",pm.response.json().txnId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9512699482\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/registration/mobile/generateOtp",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"registration",
+								"mobile",
+								"generateOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2-Verify OTP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"OTPTOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":\"934916\",\r\n    \"txnId\": \"{{TXNID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/registration/mobile/verifyOtp",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"registration",
+								"mobile",
+								"verifyOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3-Create Healh ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"User Testing\",\r\n    \"gender\": \"F\",\r\n    \"token\": \"{{OTPTOKEN}}\",\r\n    \"txnId\": \"{{TXNID}}\",\r\n    \"yearOfBirth\": \"1998\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://healthidsbx.ndhm.gov.in/api/v1/registration/mobile/createHealthId",
+							"protocol": "https",
+							"host": [
+								"healthidsbx",
+								"ndhm",
+								"gov",
+								"in"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"mobile",
+								"createHealthId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth with mobile from health Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"healthid\":\"user.test@sbx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/auth/authWithMobile",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"authWithMobile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OPT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":\"794231\",\r\n    \"txnId\":\"5b67282f-6cc8-424b-9752-2ba58b10906a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/auth/confirmWithMobileOTP",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"confirmWithMobileOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authMethod\":\"MOBILE_OTP\",\r\n    \"healthid\":\"user.test@sbx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/auth/init",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"init"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-TOKEN",
+								"value": "Bearer eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI0NS0zMTQ4LTM0ODUtNTg4NiIsIm1vYmlsZSI6Iis5MTk1MTI2OTk0ODIiLCJoZWFsdGhJZCI6InVzZXIudGVzdEBzYngiLCJleHAiOjE2MTUxODczMTEsImhlYWx0aElkTnVtYmVyIjoiNDUtMzE0OC0zNDg1LTU4ODYiLCJpYXQiOjE2MTUxODAxMTF9.O42z0A7PUcEUJQhdCHt3NmrX6r_MmnINFHnfjO1iWbcs9vm0EkeSx2syJJMijPGbsIBYdzHvWpQtrh-GjNdU81ueiSQAtyXJaqu0WvRswGon21EdRp1uZSrLYPSq9XceGVjCUxOGxUwzN3FpKJcUGExlDQU3HnaIS59o6-iJZVKtY-IHQ9xkBVOSW6UloTyCWwxP94eG2mv0sJbVKVfdAnz91QaU4FUzyxMcqplLY7lrw-45cHKvJSd8yD3UND0Xrzf73bqs6MOiSt3Gk_k5VRTvBLegV2NV6ft1M6KZ7_2FRnTp-GT5k52QhGKAZTWYx05iSjl1WGgglYJ6lqPv3-jIcurBXpUDaVXGaLYFq51crdR262p4dgUu1VN99N-u9JQtpVIkrC32OQtKYTIGOQrK8o7xd_ly53_Wa3wlbRObzTOeDJaLtYr4Gl0Z3lZRfsDcdFKUuPhRW2M2rFLaIWGMaI7EnwwlQDts2JgjIWs_cGoK8UyC43YwDou4wopOdh3grna1sM2XMdFaK4D214sj9Ynya9hYf6606Y9CTGoZFkMJ4jmRPT_depRwJnutbGx4tn-_18iSRwz0cdNyqbdZmGKnYLLYQGVx5pkfSJq9xo_1JE5W5D5wOC4Xp_U1ni6mO8wETwFIP4qmCLrjYWRxiOm6J_P868Lchgl_QqI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{HEALTH_ID_URL}}/v1/account/profile",
+							"host": [
+								"{{HEALTH_ID_URL}}"
+							],
+							"path": [
+								"v1",
+								"account",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const moment = require('moment');",
+					"pm.environment.set(\"timestamp\", moment.utc().format(\"YYYY-MM-DDThh:mm:ss.SSSSSS\"));",
+					"// In date format it should be \"hh\" and not \"HH\" otherwise u will get ",
+					"// too many requests found error",
+					"",
+					"// pm.request.headers.add({",
+					"//     key:'X-CM-ID',",
+					"//     value:'sbx'",
+					"// });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
