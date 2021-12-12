@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "c09a8767-de49-4ccf-9046-be5e096ddeec",
+		"name": "FHIR Starter Track- Cardio-Pre-requisite-Participant Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pre-requisite step",
+			"item": [
+				{
+					"name": "create bundle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"resourceType\": \"Bundle\",\r\n\t\"type\": \"transaction\",\r\n\t\"entry\": [\r\n\t\t{\r\n\t\t\t\"fullUrl\": \"urn:uuid:04121321-4af5-424c-a0e1-ed3aab1c349d\",\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Patient\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"use\": \"usual\",\r\n\t\t\t\t\t\t\"type\": {\r\n\t\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"system\": \"http://hl7.org/fhir/v2/0203\",\r\n\t\t\t\t\t\t\t\t\t\"code\": \"MR\"\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"system\": \"https://hl7fhir/identifiers/PatientIdentifier\",\r\n\t\t\t\t\t\t\"value\": \"<YOUR-MRN>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"active\": true,\r\n\t\t\t\t\"name\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"use\": \"official\",\r\n\t\t\t\t\t\t\"family\": \"<Your PATIENT SURNAME>\",\r\n\t\t\t\t\t\t\"given\": [\r\n\t\t\t\t\t\t\t\"<Your PATIENT FIRSTNAME>\"\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"telecom\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"phone\",\r\n\t\t\t\t\t\t\"value\": \"(03) 5555 6473\",\r\n\t\t\t\t\t\t\"use\": \"work\",\r\n\t\t\t\t\t\t\"rank\": 1\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"phone\",\r\n\t\t\t\t\t\t\"value\": \"(03) 3410 5613\",\r\n\t\t\t\t\t\t\"use\": \"mobile\",\r\n\t\t\t\t\t\t\"rank\": 2\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"gender\": \"male\",\r\n\t\t\t\t\"birthDate\": \"1974-12-25\",\r\n\t\t\t\t\"address\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"use\": \"home\",\r\n\t\t\t\t\t\t\"text\": \"534 Erewhon St PeasantVille, Rainbow, Vic  3999\",\r\n\t\t\t\t\t\t\"city\": \"PleasantVille\",\r\n\t\t\t\t\t\t\"district\": \"Rainbow\",\r\n\t\t\t\t\t\t\"state\": \"Vic\",\r\n\t\t\t\t\t\t\"postalCode\": \"3999\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"contact\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"relationship\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\"system\": \"http://hl7.org/fhir/v2/0131\",\r\n\t\t\t\t\t\t\t\t\t\t\"code\": \"N\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"name\": {\r\n\t\t\t\t\t\t\t\"family\": \"Gills\",\r\n\t\t\t\t\t\t\t\"given\": [\r\n\t\t\t\t\t\t\t\t\"Molly\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"telecom\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"phone\",\r\n\t\t\t\t\t\t\t\t\"value\": \"+33 (237) 998327\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"address\": {\r\n\t\t\t\t\t\t\t\"use\": \"home\",\r\n\t\t\t\t\t\t\t\"line\": [\r\n\t\t\t\t\t\t\t\t\"534 Erewhon St\"\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"city\": \"PleasantVille\",\r\n\t\t\t\t\t\t\t\"district\": \"Rainbow\",\r\n\t\t\t\t\t\t\t\"state\": \"Vic\",\r\n\t\t\t\t\t\t\t\"postalCode\": \"3999\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"gender\": \"female\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"PUT\",\r\n\t\t\t\t\"url\": \"Patient?identifier=https://hl7fhir/identifiers/PatientIdentifier|<YOUR-MRN>\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"fullUrl\": \"urn:uuid:dbd6366c-bc61-11ea-b3de-0242ac130004\",\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Practitioner\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"https://hl7fhir/identifiers/PractitionerIdentifier\",\r\n\t\t\t\t\t\t\"value\": \"<YOUR-PRACTITIONER-ID>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"active\": true,\r\n\t\t\t\t\"name\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"family\": \"<YOUR PRACTITIONER SURNAME>\",\r\n\t\t\t\t\t\t\"given\": [\r\n\t\t\t\t\t\t\t\"<YOUR PRACTITIONER FIRSTNAME>\"\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"prefix\": [\r\n\t\t\t\t\t\t\t\"Dr\"\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"address\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"use\": \"home\",\r\n\t\t\t\t\t\t\"line\": [\r\n\t\t\t\t\t\t\t\"560 Neward St\"\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"city\": \"PleasantVille\",\r\n\t\t\t\t\t\t\"state\": \"Vic\",\r\n\t\t\t\t\t\t\"postalCode\": \"3999\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"qualification\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"http://example.org/UniversityIdentifier\",\r\n\t\t\t\t\t\t\t\t\"value\": \"12345\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"code\": {\r\n\t\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v2-0360/2.7\",\r\n\t\t\t\t\t\t\t\t\t\"code\": \"BS\",\r\n\t\t\t\t\t\t\t\t\t\"display\": \"Bachelor of Science\"\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"text\": \"Bachelor of Science\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"period\": {\r\n\t\t\t\t\t\t\t\"start\": \"1995\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"issuer\": {\r\n\t\t\t\t\t\t\t\"display\": \"Example University\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"url\": \"Practitioner\",\r\n\t\t\t\t\"ifNoneExist\":\"identifier=https://hl7fhir/identifiers/PractitionerIdentifier|<YOUR-PRACTITIONER-ID>\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"fullUrl\": \"urn:uuid:05ca0ab6-bc62-11ea-b3de-0242ac130004\",\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Schedule\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"use\": \"usual\",\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/scheduleid\",\r\n\t\t\t\t\t\t\"value\": \"Sched4089\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"active\": true,\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"17\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceType\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"165\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"specialty\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"394579002\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"actor\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"reference\": \"urn:uuid:dbd6366c-bc61-11ea-b3de-0242ac130004\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"planningHorizon\": {\r\n\t\t\t\t\t\"start\": \"2021-12-12T09:00:00Z\",\r\n\t\t\t\t\t\"end\": \"2021-12-12T10:00:00Z\"\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"url\": \"Schedule\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Slot\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/identifiers/slots\",\r\n\t\t\t\t\t\t\"value\": \"12100\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"17\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"schedule\": {\r\n\t\t\t\t\t\"reference\": \"urn:uuid:05ca0ab6-bc62-11ea-b3de-0242ac130004\"\r\n\t\t\t\t},\r\n\t\t\t\t\"status\": \"free\",\r\n\t\t\t\t\"start\": \"2021-12-12T09:00:00Z\",\r\n\t\t\t\t\"end\": \"2021-12-12T09:30:00Z\"\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"url\": \"Slot\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Slot\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/identifiers/slots\",\r\n\t\t\t\t\t\t\"value\": \"12101\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"17\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"schedule\": {\r\n\t\t\t\t\t\"reference\": \"urn:uuid:05ca0ab6-bc62-11ea-b3de-0242ac130004\"\r\n\t\t\t\t},\r\n\t\t\t\t\"status\": \"free\",\r\n\t\t\t\t\"start\": \"2021-12-12T09:30:00Z\",\r\n\t\t\t\t\"end\": \"2021-12-12T10:00:00Z\"\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"url\": \"Slot\"\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								""
+							]
+						},
+						"description": "create patient resource\r\ncreate practitioner resource\r\ncreate one schedule resource for the above practitioner\r\ncreate 2 slot resources for the above schedule.\r\nNote: before processing this bundle request, please change the patient and practitioner identifiers and the corresponding request URLS"
+					},
+					"response": []
+				}
+			],
+			"description": "Create a bundle consisting of following resources:\r\n1. patient \r\n2. practitioner\r\n3. schedule for above practitioner - this will be post. So everytime you change the patient and practitioner id, automatically new schedule will be assigned to the referenced practitioner.\r\n4. 2 slots - this will be post. \r\n\r\n\r\nPatient\r\nidentifier - MRN3780\r\nlogicalid - 1283381\r\nname - Peter Hawkins\r\n\r\nPractitioner\r\nidentifier - Prac48036\r\nlogicalid - 1283380\r\nname - Dr. Sheldon Buffet\r\n\r\n\r\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
