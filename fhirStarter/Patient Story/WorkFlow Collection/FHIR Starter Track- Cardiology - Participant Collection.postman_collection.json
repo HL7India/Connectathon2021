@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "18491e0a-eec2-4fa5-8888-437da75a391e",
+		"name": "FHIR Starter Track- Cardiology - Participant Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1st STEP -APP - Fetch schedule and slots for practitioner",
+			"item": [
+				{
+					"name": "Get active Schedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/Schedule?_revinclude=Slot:schedule&actor.identifier=https://hl7fhir/identifiers/PractitionerIdentifier|<YOUR-PRACTITIONER-ID>\n",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"Schedule"
+							],
+							"query": [
+								{
+									"key": "_revinclude",
+									"value": "Slot:schedule"
+								},
+								{
+									"key": "actor.identifier",
+									"value": "https://hl7fhir/identifiers/PractitionerIdentifier|<YOUR-PRACTITIONER-ID>\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "2nd STEP-APP- Create Appointment-proposed",
+			"item": [
+				{
+					"name": "Create Appointment in proposed state",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\t\t\"resourceType\": \"Appointment\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/identifiers/appointment\",\r\n\t\t\t\t\t\t\"value\": \"<YOUR-APPOINTMENT-ID>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"status\": \"proposed\",\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"http://example.org/service-category\",\r\n\t\t\t\t\t\t\t\t\"code\": \"gp\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceType\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"165\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"specialty\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"http://snomed.info/sct\",\r\n\t\t\t\t\t\t\t\t\"code\": \"394579002\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"appointmentType\": {\r\n\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v2-0276\",\r\n\t\t\t\t\t\t\t\"code\": \"CHECKUP\",\r\n\t\t\t\t\t\t\t\"display\": \"A routine check-up\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t},\r\n\t\t\t\t\"priority\": 5,\r\n\t\t\t\t\"description\": \"Routine heart checkup\",\r\n\t\t\t\t\"minutesDuration\": 30,\r\n\t\t\t\t\"slot\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"reference\": \"Slot/<SELECTED-SLOT-LOGICAL-ID>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"created\": \"2021-12-11\",\r\n\t\t\t\t\"comment\": \"Determine the next actions that may be appropriate.\",\r\n\t\t\t\t\"participant\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"actor\": {\r\n\t\t\t\t\t\t\t\"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"required\": \"required\",\r\n\t\t\t\t\t\t\"status\": \"accepted\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"type\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n\t\t\t\t\t\t\t\t\t\t\"code\": \"ATND\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"actor\": {\r\n\t\t\t\t\t\t\t\"reference\": \"Practitioner/<PRACTITIONER-LOGICAL-ID>\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"required\": \"required\",\r\n\t\t\t\t\t\t\"status\": \"needs-action\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/Appointment",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"Appointment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3rd STEP -EMR-Update slot and Appointment Resource",
+			"item": [
+				{
+					"name": "update slot and appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"resourceType\": \"Bundle\",\r\n\t\"type\": \"transaction\",\r\n\t\"entry\": [\r\n\t\t{\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Slot\",\r\n\t\t\t\t\"id\": \"<SELECTED-SLOT-LOGICAL-ID>\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/identifiers/slots\",\r\n\t\t\t\t\t\t\"value\": \"12100\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"17\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"schedule\": {\r\n\t\t\t\t\t\"reference\": \"Schedule/<SCHEDULE-LOGICAL-ID>\"\r\n\t\t\t\t},\r\n\t\t\t\t\"status\": \"busy\",\r\n\t\t\t\t\"start\": \"2021-12-12T09:00:00Z\",\r\n\t\t\t\t\"end\": \"2021-12-12T09:30:00Z\"\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"PUT\",\r\n\t\t\t\t\"url\": \"Slot/<SELECTED-SLOT-LOGICAL-ID>\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"resource\": {\r\n\t\t\t\t\"resourceType\": \"Appointment\",\r\n\t\t\t\t\"identifier\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"system\": \"http://hl7fhir/identifiers/appointment\",\r\n\t\t\t\t\t\t\"value\": \"<YOUR-APPOINTMENT-ID>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"status\": \"booked\",\r\n\t\t\t\t\"serviceCategory\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"http://example.org/service-category\",\r\n\t\t\t\t\t\t\t\t\"code\": \"gp\",\r\n\t\t\t\t\t\t\t\t\"display\": \"General Practice\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"serviceType\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"code\": \"165\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"specialty\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"system\": \"http://snomed.info/sct\",\r\n\t\t\t\t\t\t\t\t\"code\": \"394579002\",\r\n\t\t\t\t\t\t\t\t\"display\": \"Cardiology\"\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t]\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"appointmentType\": {\r\n\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v2-0276\",\r\n\t\t\t\t\t\t\t\"code\": \"CHECKUP\",\r\n\t\t\t\t\t\t\t\"display\": \"A routine check-up\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t},\r\n\t\t\t\t\"priority\": 5,\r\n\t\t\t\t\"description\": \"Routine heart checkup\",\r\n\t\t\t\t\"minutesDuration\": 30,\r\n\t\t\t\t\"slot\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"reference\": \"Slot/<SELECTED-SLOT-LOGICAL-ID>\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"created\": \"2021-12-11\",\r\n\t\t\t\t\"comment\": \"Determine the next actions that may be appropriate.\",\r\n\t\t\t\t\"participant\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"actor\": {\r\n\t\t\t\t\t\t\t\"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"required\": \"required\",\r\n\t\t\t\t\t\t\"status\": \"accepted\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"type\": [\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\"coding\": [\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n\t\t\t\t\t\t\t\t\t\t\"code\": \"ATND\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\"actor\": {\r\n\t\t\t\t\t\t\t\"reference\": \"Practitioner/<PRACTITIONER-LOGICAL-ID>\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"required\": \"required\",\r\n\t\t\t\t\t\t\"status\": \"accepted\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"PUT\",\r\n\t\t\t\t\"url\": \"Appointment/<APPOINTMENT-LOGICAL-ID>\"\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "4th STEP- EMR- Create Encounter",
+			"item": [
+				{
+					"name": "Create Encounter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Exist",
+								"value": "identifier=<YOUR-VISIT-ID>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"resourceType\": \"Encounter\",\r\n\t\"identifier\": [\r\n\t\t{\r\n\t\t\t\"use\": \"temp\",\r\n\t\t\t\"value\": \"<YOUR-VISIT-ID>\"\r\n\t\t}\r\n\t],\r\n\t\"status\": \"in-progress\",\r\n\t\"class\": {\r\n\t\t\"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n\t\t\"code\": \"AMB\",\r\n\t\t\"display\": \"ambulatory\"\r\n\t},\r\n\t\"type\": [\r\n\t\t{\r\n\t\t\t\"coding\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"system\": \"http://snomed.info/sct\",\r\n\t\t\t\t\t\"code\": \"11429006\",\r\n\t\t\t\t\t\"display\": \"Consultation\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t],\r\n\t\"priority\": {\r\n\t\t\"coding\": [\r\n\t\t\t{\r\n\t\t\t\t\"system\": \"http://snomed.info/sct\",\r\n\t\t\t\t\"code\": \"17621005\",\r\n\t\t\t\t\"display\": \"Normal\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"subject\": {\r\n\t\t\"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n\t},\r\n\t\"participant\": [\r\n\t\t{\r\n\t\t\t\"individual\": {\r\n\t\t\t\t\"reference\": \"Practitioner/<PRACTITIONER-LOGICAL-ID>\"\r\n\t\t\t}\r\n\t\t}\r\n\t],\r\n  \"appointment\": [\r\n    {\r\n      \"reference\": \"Appointment/<APPOINTMENT-LOGICAL-ID>\"\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2021-12-12T09:00:00Z\",\r\n    \"end\": \"2021-12-12T09:30:00Z\"\r\n  },\r\n\t\"reasonCode\": [\r\n\t\t{\r\n\t\t\t\"text\": \"routine heart checkup\"\r\n\t\t}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/Encounter",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"Encounter"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "5th STEP-EMR- Measure heart rate",
+			"item": [
+				{
+					"name": "Create Observation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Exist",
+								"value": "identifier=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\",\r\n        \"display\": \"Heart rate\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n  },\r\n\"encounter\": {\r\n\"reference\": \"Encounter/<ENCOUNTER-LOGICAL-ID>\"\r\n\t},\r\n  \"effectiveDateTime\": \"2021-12-12T09:15:00Z\",\r\n  \"valueQuantity\": {\r\n    \"value\": 44,\r\n    \"unit\": \"beats/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/Observation",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"Observation"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "6th STEP -EMR- Order heart ultrasound",
+			"item": [
+				{
+					"name": "Create ServiceRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"ServiceRequest\",\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"PLAC\"\r\n          }\r\n        ],\r\n        \"text\": \"Placer\"\r\n      },\r\n      \"system\": \"http://hl7fhir/identifiers/servicerequest\",\r\n      \"value\": \"234534\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"intent\": \"original-order\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"5216004\",\r\n        \"display\":\"Three dimensional ultrasound imaging of heart\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart Imaging Test\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/<ENCOUNTER-LOGICAL-ID>\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-12-12T09:17:00Z\",\r\n  \"requester\": {\r\n    \"reference\": \"Practitioner/<PRACTITIONER-LOGICAL-ID>\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/ServiceRequest",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"ServiceRequest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "7th STEP-EMR - Update the Visit details",
+			"item": [
+				{
+					"name": "Update Encounter",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"meta\": {\r\n    \"versionId\": \"1\",\r\n    \"lastUpdated\": \"2020-12-12T14:07:02.797+00:00\"\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"use\": \"temp\",\r\n      \"value\": \"<YOUR-VISIT-ID>\"\r\n    }\r\n  ],\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11429006\",\r\n          \"display\": \"Consultation\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"priority\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"17621005\",\r\n        \"display\": \"Normal\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<PATIENT-LOGICAL-ID>\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/<PRACTITIONER-LOGICAL-ID>\"\r\n      }\r\n    }\r\n  ],\r\n  \"appointment\": [\r\n    {\r\n      \"reference\": \"Appointment/<APPOINTMENT-LOGICAL-ID>\"\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2021-12-12T09:00:00Z\",\r\n    \"end\": \"2021-12-12T09:30:00Z\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"text\": \"routine heart checkup\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://fhir.hl7fundamentals.org/r4/Encounter?identifier=<YOUR-VISIT-ID>",
+							"protocol": "http",
+							"host": [
+								"fhir",
+								"hl7fundamentals",
+								"org"
+							],
+							"path": [
+								"r4",
+								"Encounter"
+							],
+							"query": [
+								{
+									"key": "identifier",
+									"value": "<YOUR-VISIT-ID>"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
