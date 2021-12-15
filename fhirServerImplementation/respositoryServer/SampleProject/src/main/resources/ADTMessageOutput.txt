@@ -1,0 +1,4 @@
+MSH|^~\&|FHIRSystemApp||||20160627155652||ADT^A01^ADT_A01|f967b43d-7330-4355-ac13-85d60771b24d|P|2.6|||AL
+EVN||20160627155652
+PID|||MRN-123455670||joshi^raj||19880330|female|||Amrillo^^Pune^Maharashtra^411057||^home^phone^^^^9498919880~^work^phone^^^^023265147664~^home^email^nehajadhav@fhirconnectathon.com||||1020^Hinduism^http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation
+PV1||inpatient||||||||||||||||Encounter-64439||||||||||||||||||||||||||20590111190522|20590111193522

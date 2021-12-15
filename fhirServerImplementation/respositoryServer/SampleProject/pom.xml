@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>V2ToFHIR</groupId>
+	<artifactId>SampleProject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+    <java.version>11</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-base</artifactId>
+			<version>5.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-r4 -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-structures-r4</artifactId>
+			<version>5.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/org.hl7.fhir.utilities -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>org.hl7.fhir.utilities</artifactId>
+			<version>5.5.11</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-client -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-client</artifactId>
+			<version>5.5.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-base -->
+		<dependency>
+			<groupId>ca.uhn.hapi</groupId>
+			<artifactId>hapi-base</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-structures-dstu -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-structures-dstu</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/org.hl7.fhir.r4 -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>org.hl7.fhir.r4</artifactId>
+			<version>5.5.11</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation -->
+		<dependency>
+		    <groupId>ca.uhn.hapi.fhir</groupId>
+		    <artifactId>hapi-fhir-validation</artifactId>
+		    <version>5.5.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v26 -->
+		<dependency>
+			<groupId>ca.uhn.hapi</groupId>
+			<artifactId>hapi-structures-v26</artifactId>
+			<version>2.3</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-api</artifactId>
+	        <version>1.7.25</version>
+    	</dependency>
+    	<dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-log4j12</artifactId>
+	        <version>1.7.25</version>
+    	</dependency>
+    	
+    	<!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-validation-resources-r4 -->
+		<dependency>
+    		<groupId>ca.uhn.hapi.fhir</groupId>
+    		<artifactId>hapi-fhir-validation-resources-r4</artifactId>
+    		<version>5.5.3</version>
+		</dependency>
+		
+		<!--  AWS Dependencies for aws cognito -->
+     	<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-core</artifactId>
+		    <version>1.11.764</version>
+		</dependency>
+
+
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-cognitoidp</artifactId>
+		    <version>1.11.764</version>
+         </dependency>
+
+
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk</artifactId>
+		    <version>1.11.360</version>
+		</dependency>	
+	</dependencies>
+
+</project>
