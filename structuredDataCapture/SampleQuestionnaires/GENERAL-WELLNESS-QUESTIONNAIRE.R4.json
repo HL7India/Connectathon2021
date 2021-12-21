@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 29.2.1"
+      }
+    ]
+  },
+  "status": "draft",
+  "name": "GENERAL WELLNESS QUESTIONNAIRE",
+  "title": "GENERAL WELLNESS QUESTIONNAIRE",
+  "resourceType": "Questionnaire",
+  "item": [
+    {
+      "type": "choice",
+      "code": [
+        {
+          "code": "q1",
+          "display": "How often due you feel stressed?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ],
+            "text": "Radio Button"
+          }
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q1",
+      "text": "How often due you feel stressed?",
+      "prefix": "1.",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "All of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Most of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Some of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Rarely"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Never"
+          }
+        }
+      ]
+    },
+    {
+      "type": "open-choice",
+      "code": [
+        {
+          "code": "q2",
+          "display": "What activities do you do for fun or relaxation?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "check-box",
+                "display": "Check-box"
+              }
+            ],
+            "text": "Check-box"
+          }
+        }
+      ],
+      "required": false,
+      "repeats": true,
+      "linkId": "/gen_wel_q2",
+      "text": "What activities do you do for fun or relaxation?",
+      "prefix": "2.",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "Meditation"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Deep Breathing"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Art / Music"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Cooking"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Writing"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Reading"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Travel"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Volunteer Work"
+          }
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "code": [
+        {
+          "code": "q3",
+          "display": "Do you exercise and how many times per week?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ],
+            "text": "Radio Button"
+          }
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q3",
+      "text": "Do you exercise and how many times per week?",
+      "prefix": "3.",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "Never"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "1-2 times a week"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "3-4 times a week"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "5-7 times a week"
+          }
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "code": [
+        {
+          "code": "q4",
+          "display": "In the past month, how often have you had trouble sleeping?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ],
+            "text": "Radio Button"
+          }
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q4",
+      "text": "In the past month, how often have you had trouble sleeping?",
+      "prefix": "4.",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "All of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Most of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Some of the time"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Rarely"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Never"
+          }
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q5",
+          "display": "Do you have tea / coffee /  caffeinated beverages daily?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q5",
+      "text": "Do you have tea / coffee /  caffeinated beverages daily?",
+      "prefix": "5.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q6",
+          "display": "Do you drink enough water daily?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q6",
+      "text": "Do you drink enough water daily?",
+      "prefix": "6.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q7",
+          "display": "Do you have enough servings of fruits and vegetables in your diet daily?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q7",
+      "text": "Do you have enough servings of fruits and vegetables in your diet daily?",
+      "prefix": "7.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "code": [
+        {
+          "code": "q8",
+          "display": "Do you usually :",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "radio-button",
+                "display": "Radio Button"
+              }
+            ],
+            "text": "Radio Button"
+          }
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q8",
+      "text": "Do you usually :",
+      "prefix": "8.",
+      "answerOption": [
+        {
+          "valueCoding": {
+            "display": "Eat out"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Cook at home"
+          }
+        },
+        {
+          "valueCoding": {
+            "display": "Both"
+          }
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q9",
+          "display": "Do you smoke?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q9",
+      "text": "Do you smoke?",
+      "prefix": "9.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q10",
+          "display": "Do you consume alcohol?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/gen_wel_q10",
+      "text": "Do you consume alcohol?",
+      "prefix": "10.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    },
+    {
+      "type": "boolean",
+      "code": [
+        {
+          "code": "q11",
+          "display": "Do you have a work life balance?",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": true,
+      "linkId": "/gen_wel_q11",
+      "text": "Do you have a work life balance?",
+      "prefix": "11.",
+      "initial": [
+        {
+          "valueBoolean": "No"
+        }
+      ]
+    }
+  ]
+}

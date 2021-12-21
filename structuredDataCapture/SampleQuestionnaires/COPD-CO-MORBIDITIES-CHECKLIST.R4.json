@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 29.2.1"
+      }
+    ]
+  },
+  "status": "draft",
+  "title": "COPD CO-MORBIDITIES CHECKLIST",
+  "resourceType": "Questionnaire",
+  "item": [
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "C1",
+          "display": "CARDIOVASCULAR",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/C1",
+      "text": "CARDIOVASCULAR",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "H1.1",
+              "display": "Hypertension",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/H1.1",
+          "text": "Hypertension",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "A1.2",
+              "display": "Atrial Fibrillation",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/A1.2",
+          "text": "Atrial Fibrillation",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "I1.3",
+              "display": "Ischemic Heart Disease",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/I1.3",
+          "text": "Ischemic Heart Disease",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "H1.4",
+              "display": "Heart Failure",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/H1.4",
+          "text": "Heart Failure",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "PP2",
+          "display": "PULMONARY PATHOLOGY",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/PP2",
+      "text": "PULMONARY PATHOLOGY",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "P2.1",
+              "display": "Pulmonary Hypertension",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/P2.1",
+          "text": "Pulmonary Hypertension",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "L2.2",
+              "display": "Lung Cancer",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/L2.2",
+          "text": "Lung Cancer",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "P2.3",
+              "display": "Pulmonary Fibrosis",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "P2.3",
+          "text": "Pulmonary Fibrosis",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "P2.4",
+              "display": "Pulmonary Embolism",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/P2.4",
+          "text": "Pulmonary Embolism",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "MH3",
+          "display": "MENTAL HEALTH",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/MH3",
+      "text": "MENTAL HEALTH",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "A3.1",
+              "display": "Anxiety",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/A3.1",
+          "text": "Anxiety",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "A3.2",
+              "display": "Depression",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/A3.2",
+          "text": "Depression",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "MD4",
+          "display": "METABOLIC DISEASE",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/MD4",
+      "text": "METABOLIC DISEASE",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "H4.1",
+              "display": "Hyperlipidemia",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/H4.1",
+          "text": "Hyperlipidemia",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "D4.2",
+              "display": "Diabetes",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/D4.2",
+          "text": "Diabetes",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "O4.3",
+              "display": "Osteoporosis",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/O4.3",
+          "text": "Osteoporosis",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "O4.4",
+              "display": "Obesity",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/O4.4",
+          "text": "Obesity",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "R5",
+          "display": "RENAL",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/R5",
+      "text": "RENAL",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "C5.1",
+              "display": "CKD",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/C5.1",
+          "text": "CKD"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "code": [
+        {
+          "code": "G6",
+          "display": "GASTROENTEROLOGY",
+          "system": "http://samplecodes.org"
+        }
+      ],
+      "required": false,
+      "linkId": "/G6",
+      "text": "GASTROENTEROLOGY",
+      "item": [
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "G6.1",
+              "display": "GERD",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/G6.1",
+          "text": "GERD",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        },
+        {
+          "type": "boolean",
+          "code": [
+            {
+              "code": "P6.2",
+              "display": "Peptic Ulcer Disease",
+              "system": "http://samplecodes.org"
+            }
+          ],
+          "required": false,
+          "linkId": "/P6.2",
+          "text": "Peptic Ulcer Disease",
+          "initial": [
+            {
+              "valueBoolean": "No"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
