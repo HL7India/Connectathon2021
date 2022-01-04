@@ -1,0 +1,44 @@
+{
+	"id": "3f2e678d-efd9-4e46-a846-55853ab822c8",
+	"name": "NDHM",
+	"values": [
+		{
+			"key": "GATEWAY_URL",
+			"value": "https://dev.ndhm.gov.in/gateway",
+			"enabled": true
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBbFJiNVdDbThUbTlFSl9JZk85ejA2ajlvQ3Y1MXBLS0ZrbkdiX1RCdkswIn0.eyJleHAiOjE2MTUyNjk0NTQsImlhdCI6MTYxNTI2ODg1NCwianRpIjoiNTA3M2QxZjctODVmOC00YmYxLWE1YTYtOThmNDIyODczYzJiIiwiaXNzIjoiaHR0cHM6Ly9kZXYubmRobS5nb3YuaW4vYXV0aC9yZWFsbXMvY2VudHJhbC1yZWdpc3RyeSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkOTNiYWRlZC02MGJlLTQxYzYtOTI4OC1iMmU1ZmY1NzVkNDkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJQSElMTElQU18xODk2ODEzIiwic2Vzc2lvbl9zdGF0ZSI6ImZlMjFmNDA1LWYyYTQtNGZhYS1hZjIzLThkNWIyZGQ5MjgzMyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo5MDA3Il0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJoaXUiLCJvZmZsaW5lX2FjY2VzcyIsImhlYWx0aElkIiwiaGVhbHRoX2xvY2tlciIsImhpcCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7IlBISUxMSVBTXzE4OTY4MTMiOnsicm9sZXMiOlsidW1hX3Byb3RlY3Rpb24iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRIb3N0IjoiMTAuMjMzLjY5LjEzNyIsImNsaWVudElkIjoiUEhJTExJUFNfMTg5NjgxMyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LXBoaWxsaXBzXzE4OTY4MTMiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjMzLjY5LjEzNyJ9.jo-rfucw7fzM1eN0lLEDDIrNsSsWJeN696bclo2NMNKI4iI78B9-7WzWStHYQ5TiQJ9ffWWfXpPOR3xBNQ4MsUzaPkbU3I6BTZuzf1qaBl5MYcEf6c4RfcrJSIUeesMlY1D-zKhFohIMqSCDHCnWnlx6GTOTPYoETuoH6_DnoWl3hGtVCLXmKlgdiSHxlH21qI2qcNMBVI90x7w3NUYtC1GlDkBJpb-SY_qXexhGd1mU48lmSB5UwlTmrfOJAJDpfn-XPu-57mFz2OZrsh4Ji4CumWVxaP9L3057LGzxnvZI5colEtP7ehL1d3s1fagfe7sLAKQxugcroJ1edOb08g",
+			"enabled": true
+		},
+		{
+			"key": "timestamp",
+			"value": "2021-03-09T05:02:54.316000",
+			"enabled": false
+		},
+		{
+			"key": "HEALTH_ID_URL",
+			"value": "https://healthidsbx.ndhm.gov.in/api",
+			"enabled": true
+		},
+		{
+			"key": "guid",
+			"value": "1234",
+			"enabled": true
+		},
+		{
+			"key": "SERVICE_AUTHORIZATION",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "timestamp",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-10-02T12:11:08.392Z",
+	"_postman_exported_using": "Postman/7.36.5"
+}
